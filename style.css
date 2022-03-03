@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.captcha {
+    background: #f9f9f9;
+    border: 1px solid #d2d2d2;
+    border-radius: 2px;
+    font-family: sans-serif;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 300px;
+    font-family: Roboto, helvetica, arial, sans-serif;
+}
+
+
+/* .captcha .checkbox {
+    border-radius: 3px;
+    border: 2px solid #c3c3c3;
+    background: #ffffff;
+    width: 24px;
+    height: 24px;
+} */
+
+.c-left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+.c-checkbox-border,
+.c-checkbox-borderAnimation,
+.c-checkbox-spinner,
+.c-checkbox-spinnerAnimation,
+.c-checkbox-checkmark,
+.c-checkbox-checked {
+    position: absolute;
+}
+
+.c-checkbox-border {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 2px solid #c1c1c1;
+    font-size: 1px;
+    height: 28px;
+    width: 28px;
+}
+
+.c-checkbox-borderAnimation {
+    width: 28px;
+    height: 28px;
+    background: url('https://www.gstatic.com/recaptcha/api2/checkbox_sprite.png');
+}
+
+.c-checkbox-borderAnimation-1 {
+    animation: borderAnimation-1 1s steps(20);
+}
+
+.c-checkbox-borderAnimation-2 {
+    animation: borderAnimation-2 1s steps(20);
+}
+
+.c-checkbox-borderAnimation-3 {
+    animation: borderAnimation-3 1s steps(20);
+}
+
+.c-checkbox-borderAnimation-11 {
+    animation: borderAnimation-11 1s steps(10);
+}
+
+.c-checkbox-borderAnimation-22 {
+    animation: borderAnimation-22 1s steps(10);
+}
+
+.c-checkbox-borderAnimation-33 {
+    animation: borderAnimation-33 .2s steps(10);
+}
+
+.c-checkbox-spinner {
+    width: 36px;
+    height: 36px;
+    background: url('https://www.gstatic.com/recaptcha/api2/loading_sprite.png');
+    animation: checkbox-spinner 1s steps(79) 2 1s;
+}
+
+.c-checkbox-spinnerAnimation {
+    width: 38px;
+    height: 38px;
+    background: url('https://www.gstatic.com/recaptcha/api2/loading_bg_sprite.png');
+    animation: spinnerAnimation 1s steps(97) .4s;
+}
+
+
+/* .c-checkbox-checkmark {
+    width: 38px;
+    height: 30px;
+    background: url('https://www.gstatic.com/recaptcha/api2/checkmark_sprite.png');
+    animation: checkbox-checkmark .8s steps(20) 3s;
+    /*animation: checkbox-checkmark 1s steps(42);* /
+
+
+}
+*/
+
+.c-checkbox-checked {
+    width: 38px;
+    height: 30px;
+    margin: 5px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Saint_Andrew%27s_cross_%28red%29.svg/1200px-Saint_Andrew%27s_cross_%28red%29.svg.png');
+    background-size: cover;
+    background-position: center;
+    /* background: url('https://www.gstatic.com/recaptcha/api2/checkmark_sprite.png') 0 -600px; */
+}
+
+@keyframes borderAnimation-1 {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -560px;
+    }
+}
+
+@keyframes borderAnimation-2 {
+    from {
+        background-position: 28px 0;
+    }
+    to {
+        background-position: 28px -560px;
+    }
+}
+
+@keyframes borderAnimation-3 {
+    from {
+        background-position: 56px 0;
+    }
+    to {
+        background-position: 56px -560px;
+    }
+}
+
+@keyframes borderAnimation-11 {
+    from {
+        background-position: 0 -560px;
+    }
+    to {
+        background-position: 0 -840px;
+    }
+}
+
+@keyframes borderAnimation-22 {
+    from {
+        background-position: 28px -560px;
+    }
+    to {
+        background-position: 28px -840px;
+    }
+}
+
+@keyframes borderAnimation-33 {
+    from {
+        background-position: 56px -560px;
+    }
+    to {
+        background-position: 56px -840px;
+    }
+}
+
+@keyframes checkbox-spinner {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -2844px;
+    }
+}
+
+@keyframes spinnerAnimation {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -3686px;
+    }
+}
+
+@keyframes checkbox-checkmark {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -600px;
+    }
+    /* 0 -1260px*/
+}
+
+.captcha .text {
+    padding: 0 25px;
+    flex: 1;
+}
+
+.captcha .logo {
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    flex-wrap: wrap;
+    font-size: 0.7em;
+    opacity: 0.8;
+}
+
+.captcha .logo .imglogo {
+    background: url('https://www.gstatic.com/recaptcha/api2/logo_48.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+}
+
+.captcha .logo .bas {
+    font-size: 0.6em;
+}
+
+.captcha .challenge {
+    position: absolute;
+    top: -5px;
+    left: 55px;
+    background: #ffffff;
+    border: 1px solid #cdcdcd;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 6px;
+    width: 300px;
+    display: none;
+}
+
+.captcha .challenge:after,
+.captcha .challenge:before {
+    display: block;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border: 10px solid transparent;
+    border-right-color: white;
+    right: 100%;
+    top: 25px;
+}
+
+.captcha .challenge:before {
+    border-right-color: #cdcdcd;
+    margin-right: 1px;
+}
+
+.captcha .challenge .prompt {
+    background: #4c90de;
+    color: white;
+    padding: 20px 20px 30px 20px;
+    font-size: 12px;
+}
+
+.captcha .challenge .prompt strong {
+    display: block;
+    font-size: 28px;
+}
+
+.captcha .challenge .grid {
+    margin-top: 5px;
+    font-size: 0;
+}
+
+.captcha .challenge .grid>div {
+    display: inline-block;
+    width: 96.66666667px;
+    height: 96.66666667px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    /* background-color: #999; */
+    position: relative;
+    transition: transform 0.1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.captcha .challenge .grid .grid-img1 {
+    background: url('https://www.sciencesetavenir.fr/assets/img/2020/01/17/cover-r4x3w1000-5e21bf77a1547-chartreux-3298051-1920.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.captcha .challenge .grid .grid-img2 {
+    background: url('https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/7/f/c/7fc903fd56_50172313_2-tigre.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.captcha .challenge .grid .grid-img3 {
+    background: url('https://media.vogue.fr/photos/6149a854caa66aad73ee8e50/1:1/w_1918,h_1918,c_limit/GettyImages-587621789.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.captcha .challenge .grid .grid-img4 {
+    background: url('https://www.jaitoutcompris.com/img/encyclo/chouette-pb.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.captcha .challenge .grid .grid-img5 {
+    background: url('https://www.zooplus.be/magazine/wp-content/uploads/2019/06/comprendre-le-langage-des-chats.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.captcha .challenge .grid .grid-img6 {
+    background: url('https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/1/8/2/182c0cf196_50167185_proprietaire-chat-min.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.captcha .challenge .grid .grid-img7 {
+    background: url('https://lemagduchien.ouest-france.fr/images/dossiers/2020-11/chien-boude-070451.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.captcha .challenge .grid .grid-img8 {
+    background: url('https://www.courrierinternational.com/sites/ci_master/files/styles/image_original_1280/public/assets/images/rtxh6tpm.jpg?itok=ovsJOJBV');
+    background-size: cover;
+    background-position: center;
+}
+
+.captcha .challenge .grid .grid-img9 {
+    background: url('https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/8/5/8/858743bb35_50169458_chien-min.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.captcha .challenge .grid>div:nth-child(3n) {
+    margin-right: 0;
+}
+
+.captcha .challenge .grid>div:after {
+    position: absolute;
+    content: "L";
+    color: white;
+    text-indent: 2px;
+    text-align: center;
+    font-size: 24px;
+    top: 0;
+    left: 0;
+    background: #4481f3;
+    width: 30px;
+    height: 30px;
+    border-radius: 99px;
+    margin: -10px;
+    box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: scaleX(-1) rotateZ(-45deg);
+    transition: all 0.1s ease-in-out;
+}
+
+.captcha .challenge .grid>div.selected {
+    transform: scale(0.8);
+}
+
+.captcha .challenge .grid>div.selected:after {
+    opacity: 1;
+    transform: scaleX(-1) rotateZ(-45deg);
+}
+
+.captcha .challenge .below {
+    border-top: 1px solid #cdcdcd;
+    padding: 5px 6px 0 6px;
+    margin: 0 -6px;
+    text-align: right;
+}
+
+.captcha .challenge .below .main {
+    background: #4c90de;
+    color: white;
+    border: 0;
+    text-transform: uppercase;
+    padding: 0.8em 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+}
